@@ -1,0 +1,17 @@
+POST http://localhost:9000/user
+Content-Type: application/json
+
+{
+    "name" : "홍길동",
+    "email" : "hong@mgail.com",
+    "nick_name": "닉네임",
+    "age" : 20
+}
+###
+
+GET http://localhost:9000/user/1
+###
+
+
+GET http://localhost:8080/user/10/profiles/photo
+###
