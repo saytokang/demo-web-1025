@@ -21,25 +21,27 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @RequestMapping("/user")
 public class UserController {
-    private final UserService userService;
 
-    @PostMapping
-    public ResponseEntity<?> createUser(@RequestBody UserDto json) {
-        log.info("{}", json);
-        Long id = userService.save(json);
-        return ResponseEntity.ok().body(id);
-    }
+	private final UserService userService;
 
-    @GetMapping("/{id}")
-    public ResponseEntity<?> getUserById(@PathVariable long id) {
-        log.info("id: {}", id);
-        UserResponse rs = userService.getUser(id);
-        return ResponseEntity.ok().body(rs);
-    }
+	@PostMapping
+	public ResponseEntity<?> createUser(@RequestBody UserDto json) {
+		log.info("{}", json);
+		Long id = userService.save(json);
+		return ResponseEntity.ok().body(id);
+	}
 
-    @GetMapping("/{id}/profiles/{name}")
-    public ResponseEntity<?> getProiflesUserById(@PathVariable String id, @PathVariable String name) {
+	@GetMapping("/{id}")
+	public ResponseEntity<?> getUserById(@PathVariable long id) {
+		log.info("id: {}", id);
+		UserResponse rs = userService.getUser(id);
+		return ResponseEntity.ok().body(rs);
+	}
 
-        return ResponseEntity.ok().build();
-    }
+	@GetMapping("/{id}/profiles/{name}")
+	public ResponseEntity<?> getProiflesUserById(@PathVariable String id, @PathVariable String name) {
+
+		return ResponseEntity.ok().build();
+	}
+
 }

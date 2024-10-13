@@ -1,12 +1,11 @@
 package com.example.demoweb.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,23 +15,25 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Getter
 public class UserEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Long id;
 
-    @Column(name = "name")
-    private String name;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
+	private Long id;
 
-    private String email;
+	@Column(name = "name")
+	private String name;
 
-    @Column(name = "nick_name")
-    private String nickName;
+	private String email;
 
-    @Builder
-    public UserEntity (String name, String email, String nickName) {
-        this.name = name;
-        this.email = email;
-        this.nickName = nickName;
-    }
+	@Column(name = "nick_name")
+	private String nickName;
+
+	@Builder
+	public UserEntity(String name, String email, String nickName) {
+		this.name = name;
+		this.email = email;
+		this.nickName = nickName;
+	}
+
 }
